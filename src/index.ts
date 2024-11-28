@@ -218,9 +218,12 @@ ThemeExtension<AppTextStyleExtension> lerp(
 
   var lightThemeIndex = themes.findIndex((theme) => theme.name === "Light Theme");
   var darkThemeIndex = themes.findIndex((theme) => theme.name === "Mobile Dark Theme");
+
+  console.log(lightThemeIndex)
+  console.log(darkThemeIndex) 
     
 
-   
+   try {
     var lightTokens = await sdk.tokens.computeTokensByApplyingThemes(tokens, [themes[lightThemeIndex]]);
     var darkTokens = await sdk.tokens.computeTokensByApplyingThemes(tokens, [themes[darkThemeIndex]]);
 
@@ -243,6 +246,12 @@ ThemeExtension<AppTextStyleExtension> lerp(
     .filter((t) => t.tokenType === TokenType.typography)
     .map((token) => createAppTypographyContentLight(token as TypographyToken))
     .join("");
+
+   } catch (error) {
+      console.log(error)
+      console.log("Error in applying themes")
+      console.log(tokens)
+   }
   
   // Create app_theme_extension.dart file content
   let appThemeExtensionContent = 
