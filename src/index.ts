@@ -20,15 +20,15 @@ Pulsar.export(async (sdk: Supernova, context: PulsarContext): Promise<Array<AnyO
     tokenGroups = tokenGroups.filter((tokenGroup) => tokenGroup.brandId === context.brandId)
   }
 
-  if (context.themeId) {
-    const themes = await sdk.tokens.getTokenThemes(remoteVersionIdentifier)
-    const theme = themes.find((theme) => theme.id === context.themeId)
-    if (theme) {
-      tokens = await sdk.tokens.computeTokensByApplyingThemes(tokens, [theme])
-    } else {
-      throw new Error("Unable to apply theme which doesn't exist in the system.")
-    }
-  }
+  // if (context.themeId) {
+  //   const themes = await sdk.tokens.getTokenThemes(remoteVersionIdentifier)
+  //   const theme = themes.find((theme) => theme.id === context.themeId)
+  //   if (theme) {
+  //     tokens = await sdk.tokens.computeTokensByApplyingThemes(tokens, [theme])
+  //   } else {
+  //     throw new Error("Unable to apply theme which doesn't exist in the system.")
+  //   }
+  // }
 
   const mappedTokens = new Map(tokens.map((token) => [token.id, token]))
 
