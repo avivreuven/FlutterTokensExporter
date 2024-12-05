@@ -27,7 +27,7 @@ export function createAppColorContent(token: ColorToken, mappedTokens: Map<strin
   parent = parent.toLowerCase();
   var editedValue = `${value.substring(6)}${value.substring(0,6)}`
 
-  return !isReference? `  static Color ${parent}${name} = Color(0x${editedValue.toUpperCase()});\n`:``
+  return !isReference? `  static Color ${parent}${name} = const Color(0x${editedValue.toUpperCase()});\n`:``
 }
 
 export function createAppColorExtansionConstractorContent(token: ColorToken, mappedTokens: Map<string, Token>, tokenGroups: Array<TokenGroup>): string {
