@@ -1,7 +1,7 @@
 {
-    "name": "@solaredge/exporter-flutter",
+    "name": "@solaredge/exporter-tokens-flutter",
     "version": "1.0.2",
-    "description": "supernova.io plugin for exporting to Flutter",
+    "description": "supernova.io plugin for exporting tokens to Flutter",
     "main": "index.js",
     "scripts": {
         "dev": "npx webpack --mode=development --watch",
