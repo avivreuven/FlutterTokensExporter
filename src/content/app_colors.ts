@@ -22,7 +22,6 @@ export function createAppColorContent(token: ColorToken, mappedTokens: Map<strin
       }
       isReference = true
       return ``
-      // return `var(--${p}${n})`
     },
   })
   parent = parent.toLowerCase();
