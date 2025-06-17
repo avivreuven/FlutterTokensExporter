@@ -219,6 +219,8 @@ ThemeExtension<AppTextStyleExtension> lerp(
   var lightTokens = themes[lightThemeIndex].overriddenTokens;
   var darkTokens = themes[darkThemeIndex].overriddenTokens;
 
+  console.log(themes);
+
   appThemeExtensionColorsContentLight = lightTokens
     .filter((t) => t.tokenType === TokenType.color)
     .map((token) => createAppThemeExtensionContent(token as ColorToken, mappedTokens, tokenGroups))
